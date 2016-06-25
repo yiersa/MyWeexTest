@@ -21,12 +21,13 @@ public class SecondActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_second);
         mContainer = (ViewGroup)findViewById(R.id.root);
         mInstance = new WXSDKInstance(this); //create weex instance
         mInstance.registerRenderListener(new SimpleRenderListener()); //SimpleRenderListener需要开发者来实现
 
         mInstance.renderByUrl("tag",
-                "http://....../page.js",
+                "http://192.168.0.101:12580/examples/build/index.js",
                 new HashMap<String, Object>(),
                 null,
                 ScreenUtil.getDisplayWidth(this),
